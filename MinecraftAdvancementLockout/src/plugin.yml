@@ -1,0 +1,7 @@
+main: com.Taylor.Lockout.Main
+name: Advancement-Lockout
+author: Taylor
+version: 1.0.0
+api-version: 1.16
+commands:
+  lockout: 

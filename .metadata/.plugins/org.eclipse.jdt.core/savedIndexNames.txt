@@ -1,0 +1,27 @@
+INDEX VERSION 1.131+C:\Users\taylo\OneDrive\Desktop\Coding\Minecraft Plugins\1.17\.metadata\.plugins\org.eclipse.jdt.core
+2092250086.index
+1644613161.index
+238550632.index
+1338146708.index
+3445611512.index
+1297225286.index
+1378015560.index
+1854035504.index
+3499340950.index
+493318889.index
+3956418768.index
+3862868720.index
+991735649.index
+4159925062.index
+402791964.index
+1481432206.index
+81293581.index
+4167196667.index
+2922245217.index
+1799961256.index
+2270713507.index
+4123756625.index
+1330774489.index
+2245724659.index
+265566128.index
+874798761.index

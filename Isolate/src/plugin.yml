@@ -1,0 +1,7 @@
+main: com.Taylor.Isolate.Main
+name: Isolate
+author: Taylor
+version: 1.0.0
+api-version: 1.16
+commands:
+  isolate: 

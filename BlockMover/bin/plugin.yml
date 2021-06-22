@@ -1,0 +1,7 @@
+main: com.Taylor.BlockMover.Main
+name: BlockMover
+version: 1.16
+author: taylor
+
+commands:
+  wand:

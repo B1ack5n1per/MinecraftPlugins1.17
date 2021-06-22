@@ -1,0 +1,7 @@
+main: com.Taylor.Dirt.Main
+name: Dirt
+version: 1.0.0
+api-version: 1.16
+author: Taylor
+commands:
+  dirt:

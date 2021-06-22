@@ -17,6 +17,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerPortalEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -44,6 +45,13 @@ public class Main extends JavaPlugin implements Listener {
 			e.setTo(loc);
 		}
 	}
+	/*
+	@EventHandler
+	public void onRespawn(PlayerRespawnEvent e) {
+		if (enabled && players.containsKey(e.getPlayer())) {
+			e.setRespawnLocation(players.get(e.getPlayer()).normal.getSpawnLocation());
+		}
+	}*/
 	
 	@EventHandler
 	public void onDeath(PlayerDeathEvent e) {
@@ -54,8 +62,10 @@ public class Main extends JavaPlugin implements Listener {
 	public List<String> onTabComplete(CommandSender sender, Command command, String label, String[] args) {
 		ArrayList<String> res = new ArrayList<String>();
 		if (args.length == 1) {
-			res.add("disable");
-			res.add("enable");
+			if (args[0].equalsIgnoreCase("isolate")) {
+				res.add("disable");
+				res.add("enable");
+			}
 		}
 		return res;
 	}

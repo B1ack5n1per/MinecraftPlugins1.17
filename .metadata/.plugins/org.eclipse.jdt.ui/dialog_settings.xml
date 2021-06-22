@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="C:\Users\taylo\OneDrive\Desktop\Coding\Minecraft Plugins\1.16.5" key="org.eclipse.jdt.ui.lastextjar"/>
-	<item value="2" key="org.eclipse.jdt.ui.last.selected.jre.kind2"/>
+	<item value="C:\Users\taylo\OneDrive\Desktop\Coding\Minecraft Plugins\1.17" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="0" key="org.eclipse.jdt.ui.last.selected.jre.kind2"/>
 	<item value="jre1.8.0_261" key="org.eclipse.jdt.ui.last.selected.project.jre"/>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 		<item value="false" key="renameSubpackages"/>
@@ -82,6 +82,11 @@
 		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
 		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="C:\Users\taylo\OneDrive\Desktop\Minecraft Servers\1.17\plugins\TeamChest.jar"/>
+			<item value="C:\Users\taylo\OneDrive\Desktop\Minecraft Servers\1.17\plugins\BasicPugin.jar"/>
+			<item value="C:\Users\taylo\OneDrive\Desktop\Minecraft Servers\1.17\plugins\Wand.jar"/>
+			<item value="C:\Users\taylo\OneDrive\Desktop\Minecraft Servers\1.17\plugins\Dirt.jar"/>
+			<item value="C:\Users\taylo\OneDrive\Desktop\Minecraft Servers\1.16.5 Spigot\plugins\Dirt.jar"/>
 			<item value="C:\Users\taylo\OneDrive\Desktop\Minecraft Servers\1.16.5 Spigot\plugins\Isolate.jar"/>
 			<item value="C:\Users\taylo\OneDrive\Desktop\Minecraft Servers\1.16.5 Spigot\plugins\Lockout.jar"/>
 			<item value="C:\Users\taylo\OneDrive\Desktop\Minecraft Servers\1.16.5 Spigot\plugins\TargetTest.jar"/>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
-<typeInfo handle="=HeatSeekingArrows/C:\/Program Files\/Java\/jre1.8.0_261\/lib\/ext\/jfxrt.jar&lt;javafx.event(EventHandler.class[EventHandler" modifiers="1537" timestamp="1595306592627"/>
-<typeInfo handle="=TargetTest/C:\/Users\/taylo\/OneDrive\/Desktop\/Coding\/Minecraft Plugins\/1.16.5\/spigot-1.16.5.jar&lt;org.bukkit.plugin.java(JavaPlugin.class[JavaPlugin" modifiers="1057" timestamp="1618447898045"/>
+    <typeInfo handle="=TargetTest/C:\/Users\/taylo\/OneDrive\/Desktop\/Coding\/Minecraft Plugins\/1.16.5\/spigot-1.16.5.jar&lt;org.bukkit.plugin.java(JavaPlugin.class[JavaPlugin" modifiers="1057" timestamp="1618447898045"/>
+    <typeInfo handle="=TeamChest/C:\/Users\/taylo\/OneDrive\/Desktop\/Coding\/Minecraft Plugins\/1.17\/spigot-1.17.jar&lt;org.bukkit.plugin.java(JavaPlugin.class[JavaPlugin" modifiers="1057" timestamp="1623975361009"/>
 </typeInfoHistroy>

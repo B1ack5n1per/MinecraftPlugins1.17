@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.bukkit.inventory.ShapelessRecipe"/>
-    <fullyQualifiedTypeName name="org.bukkit.entity.Entity"/>
     <fullyQualifiedTypeName name="com.mojang.datafixers.types.templates.List"/>
     <fullyQualifiedTypeName name="org.bukkit.event.entity.ProjectileHitEvent"/>
     <fullyQualifiedTypeName name="org.bukkit.entity.LivingEntity"/>
@@ -60,4 +58,6 @@
     <fullyQualifiedTypeName name="org.bukkit.event.block.BlockBreakEvent"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="org.bukkit.Sound"/>
+    <fullyQualifiedTypeName name="org.bukkit.EntityEffect"/>
 </qualifiedTypeNameHistroy>

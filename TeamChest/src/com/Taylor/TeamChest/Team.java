@@ -100,7 +100,8 @@ public class Team {
 	public String toString() {
 		String res = "{ name: \"" + name + "\", players: [";
 		for (String player : players) res += player + ", ";
-		res += " }";
+		res = res.substring(0, res.length() - 2);
+		res += "] }";
 		
 		
 		return res;

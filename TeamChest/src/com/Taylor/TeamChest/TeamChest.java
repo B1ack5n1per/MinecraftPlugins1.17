@@ -21,7 +21,6 @@ public class TeamChest {
 	}
 	
 	public boolean open(Player player) {
-		System.out.println(team.players);
 		if (team.players.contains(player.getDisplayName())) {
 			player.openInventory(team.inv);
 			return true;

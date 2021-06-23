@@ -123,9 +123,16 @@ public class Main extends JavaPlugin implements Listener {
 		if (chests.size() < 1) return;
 		for (TeamChest chest : chests) {
 			if (chest.loc.equals(e.getBlock().getLocation())) {
-				chests.remove(chest);
-				e.setDropItems(false);
-				e.getBlock().getWorld().dropItemNaturally(e.getBlock().getLocation(), teamChest.clone());
+				for (Team team : teams) {
+					if (team.players.contains(e.getPlayer().getDisplayName())) {
+						chests.remove(chest);
+						e.setDropItems(false);
+						e.getBlock().getWorld().dropItemNaturally(e.getBlock().getLocation(), teamChest.clone());
+						return;
+					}
+				}
+				e.getPlayer().sendMessage(ChatColor.RED + "This chest belongs to another team");
+				e.setCancelled(true);
 				return;
 			}
 		}
@@ -139,7 +146,6 @@ public class Main extends JavaPlugin implements Listener {
 			// Check if team chest activated
 			for (TeamChest chest : chests) {
 				if (chest.loc.equals(e.getClickedBlock().getLocation())) {
-					System.out.println("Opening");
 					if (chest.open(e.getPlayer())) e.setCancelled(true);
 					else {
 						e.getPlayer().sendMessage(ChatColor.RED + "This chest belongs to another team");
@@ -157,7 +163,6 @@ public class Main extends JavaPlugin implements Listener {
 					for (Team team : teams) {
 						if (team.players.contains(e.getPlayer().getDisplayName())) {
 							chests.add(new TeamChest(team, e.getClickedBlock().getLocation().add(e.getBlockFace().getDirection().normalize())));
-							System.out.println("created teamchest");
 							return;
 						}
 					}
@@ -218,49 +223,50 @@ public class Main extends JavaPlugin implements Listener {
 	
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("teamChest")) {
-			if (args.length == 1) {
-				if (args[0].equalsIgnoreCase("backup")) {
-					if (save(backup)) sender.sendMessage(ChatColor.GREEN + "Backup Saved Successfully");
-					return true;
-				}
-				if (args[0].equalsIgnoreCase("teams")) {
-					sender.sendMessage(teams.toString());
-					return true;
-				}
-			}
-			if (args.length == 2 && args[1].equals("create")) {
-				teams.add(new Team(args[0]));
-				sender.sendMessage(ChatColor.GREEN + "Team " + args[0] + " created");
-				return true;
-			}
-			if (args.length == 3) {
-				if (!(sender instanceof Player)) return true;
-				
-				if (args[1].equals("add")) {
-					for (Team team : teams)  {
-						team.remove(args[2]);
-						if (team.name.equals(args[0]) && this.getServer().getOnlinePlayers().contains(this.getServer().getPlayer(args[2]))) {
-							team.add(args[2]);
-							sender.sendMessage(ChatColor.GREEN + args[2] + " was successfully added to team " + team.name);
-						}
+		if (sender.isOp()) {
+			if (cmd.getName().equalsIgnoreCase("teamChest")) {
+				if (args.length == 1) {
+					if (args[0].equalsIgnoreCase("backup")) {
+						if (save(backup)) sender.sendMessage(ChatColor.GREEN + "Backup Saved Successfully");
+						return true;
+					}
+					if (args[0].equalsIgnoreCase("teams")) {
+						sender.sendMessage(teams.toString());
+						return true;
 					}
 				}
-
-				if (args[1].equals("remove")) {
-					for (Team team : teams) {
-						if (team.players.contains(args[2])) {
+				if (args.length == 2 && args[1].equals("create")) {
+					teams.add(new Team(args[0]));
+					sender.sendMessage(ChatColor.GREEN + "Team " + args[0] + " created");
+					return true;
+				}
+				if (args.length == 3) {
+					if (!(sender instanceof Player)) return true;
+					
+					if (args[1].equals("add")) {
+						for (Team team : teams)  {
 							team.remove(args[2]);
-							sender.sendMessage(ChatColor.GREEN + args[2] + " was successfully removed from team " + team.name);
+							if (team.name.equals(args[0]) && this.getServer().getOnlinePlayers().contains(this.getServer().getPlayer(args[2]))) {
+								team.add(args[2]);
+								sender.sendMessage(ChatColor.GREEN + args[2] + " was successfully added to team " + team.name);
+							}
 						}
 					}
+	
+					if (args[1].equals("remove")) {
+						for (Team team : teams) {
+							if (team.players.contains(args[2])) {
+								team.remove(args[2]);
+								sender.sendMessage(ChatColor.GREEN + args[2] + " was successfully removed from team " + team.name);
+							}
+						}
+					}
+				} else {
+					sender.sendMessage(ChatColor.RED + "improper usage: /teamChest <[team]/backup/teams> <add/remove/create> <player> [color]");
+					return true;
 				}
-			} else {
-				sender.sendMessage(ChatColor.RED + "improper usage: /teamChest <[team]/backup/teams> <add/remove/create> <player> [color]");
-				return true;
 			}
 		}
-		
 		return false;
 	}
 }
